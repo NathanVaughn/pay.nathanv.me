@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pay Nathan Vaughn</title>
+    <meta name="description" content="Give Nathan Vaughn Money">
+    <meta name="author" content="Nathan Vaughn">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/benny.png" />
+    <meta property="og:title" content="Give Nathan Vaughn Money" />
+    <meta property="og:url" content="https://pay.nathanv.me" />
+    <meta property="og:description" content="Look, college ain't gonna pay for itself." />
+    <meta property="og:image" content="https://pay.nathanv.me/img/opg.jpg" />
+</head>
+
+<body>
+    <div class="buttons">
+        <h1>Pay <a class="name" href="https://nathanv.me" target="_blank">Nathan Vaughn</a>
+        </h1>
+        <button onclick="this.blur();window.open('https://paypal.me/NAVaughn', '_blank');" class="raise paypal">PayPal</button>
+        <button onclick="this.blur();window.open('https://www.venmo.com/NathanVaughn', '_blank');" class="raise venmo">Venmo</button>
+        <button onclick="this.blur();document.getElementById('address').innerHTML = '0xd326FBAEBbfbFb1A630804E11a5E5E04f856853c';"
+            class="raise ethereum">Ethereum</button>
+        <button onclick="this.blur();document.getElementById('address').innerHTML = '1EKgN7bAVWBu6GdLMmKnjCSzvqgkkkJo8W';"
+            class="raise bcash">Bitcoin Cash</button>
+        <div id="address"> </div>
+    </div>
+</body>
+<style>
+    .raise:hover,
+    .raise:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        -webkit-transform: translateY(-0.25em);
+        transform: translateY(-0.25em);
+    }
+
+    .paypal {
+        --color: #3e5cbe;
+        --hover: #6b7afc;
+    }
+
+    .venmo {
+        --color: #3d95ce;
+        --hover: #6fb4e0;
+    }
+
+    .ethereum {
+        --color: #575757;
+        --hover: #999999;
+    }
+
+    .bcash {
+        --color: #427e40;
+        --hover: #45a738;
+    }
+
+    button:hover,
+    button:focus {
+        border-color: var(--hover);
+        color: #fff;
+        cursor: pointer;
+    }
+
+    body {
+        background: #344557 url("img/back.jpg");
+        background-size: cover;
+        color: #fff;
+        font: 300 1em 'Fira Sans', sans-serif;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        overflow-y: hidden;
+    }
+
+    button {
+        color: var(--color);
+        transition: 0.25s;
+        background: none;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+    }
+
+    h1 {
+        font-weight: 400;
+        font-size: 40pt;
+        margin-bottom: 1em;
+    }
+
+    .name {
+        color: #da5252;
+        font: inherit;
+    }
+
+    .name:link {
+        text-decoration: none;
+    }
+
+    .name:hover {
+        text-decoration: underline;
+    }
+
+    #address {
+        margin-top: 2em;
+        text-align: center;
+        font-size: 3vw;
+        height: 23.2px;
+    }
+</style>
+
+</html>
