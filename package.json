@@ -1,0 +1,25 @@
+{
+  "name": "pay.nathanv.me",
+  "version": "1.0.0",
+  "description": "Nathan Vaughn's payment website",
+  "main": "index.js",
+  "scripts": {
+    "server": "live-server --no-browser",
+    "screenshot-gen": "node screenshot.js",
+    "screenshot": "start-server-and-test server http://localhost:8080 screenshot-gen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanVaughn/pay.nathanv.me.git"
+  },
+  "author": "Nathan Vaughn",
+  "license": "MIT",
+  "homepage": "https://github.com/NathanVaughn/pay.nathanv.me#readme",
+  "dependencies": {
+    "capture-chrome": "^3.0.0",
+    "live-server": "^1.2.1",
+    "png-to-jpeg": "^1.0.1",
+    "puppeteer": "^1.11.0",
+    "start-server-and-test": "^1.7.11"
+  }
+}

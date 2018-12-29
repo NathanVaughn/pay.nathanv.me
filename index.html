@@ -7,11 +7,13 @@
     <meta name="description" content="Give Nathan Vaughn Money">
     <meta name="author" content="Nathan Vaughn">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2F2E40">
     <link rel="icon" type="image/png" href="img/benny.png" />
     <meta property="og:title" content="Give Nathan Vaughn Money" />
     <meta property="og:url" content="https://pay.nathanv.me" />
     <meta property="og:description" content="Look, college ain't gonna pay for itself." />
     <meta property="og:image" content="https://pay.nathanv.me/img/opg.jpg" />
+    <link rel="canonical" href="https://pay.nathanv.me">
 </head>
 
 <body>
@@ -20,6 +22,7 @@
         </h1>
         <button onclick="this.blur();window.open('https://paypal.me/NAVaughn', '_blank');" class="raise paypal">PayPal</button>
         <button onclick="this.blur();window.open('https://www.venmo.com/NathanVaughn', '_blank');" class="raise venmo">Venmo</button>
+        <button onclick="this.blur();window.open('https://pay.google.com/payments/u/0/home#sendRequestMoney', '_blank');" class="raise google">Google Pay</button>
         <button onclick="this.blur();document.getElementById('address').innerHTML = '0xd326FBAEBbfbFb1A630804E11a5E5E04f856853c';"
             class="raise ethereum">Ethereum</button>
         <button onclick="this.blur();document.getElementById('address').innerHTML = '1EKgN7bAVWBu6GdLMmKnjCSzvqgkkkJo8W';"
@@ -36,13 +39,18 @@
     }
 
     .paypal {
-        --color: #3e5cbe;
-        --hover: #6b7afc;
+        --color: #3b7bbf;
+        --hover: #689bd0;
     }
 
     .venmo {
         --color: #3d95ce;
-        --hover: #6fb4e0;
+        --hover: #dce0e6;
+    }
+
+    .google {
+        --color: #DB4437;
+        --hover: #e78279;
     }
 
     .ethereum {
