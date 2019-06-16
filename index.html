@@ -1,125 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>Pay Nathan Vaughn</title>
-    <meta name="description" content="Give Nathan Vaughn Money">
+    <meta name="description" content="Give Nathan Vaughn money">
     <meta name="author" content="Nathan Vaughn">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2F2E40">
-    <link rel="icon" type="image/png" href="img/benny.png" />
-    <meta property="og:title" content="Give Nathan Vaughn Money" />
+    <link rel="icon" type="image/png" href="img/nv.png" />
+    <meta property="og:title" content="Give Nathan Vaughn money" />
     <meta property="og:url" content="https://pay.nathanv.me" />
-    <meta property="og:description" content="Look, college ain't gonna pay for itself." />
+    <meta property="og:description" content="Give Nathan Vaughn money" />
     <meta property="og:image" content="https://pay.nathanv.me/img/opg.jpg" />
     <link rel="canonical" href="https://pay.nathanv.me">
 </head>
 
 <body>
-    <div class="buttons">
-        <h1>Pay <a class="name" href="https://nathanv.me" target="_blank">Nathan Vaughn</a>
-        </h1>
-        <button onclick="this.blur();window.open('https://paypal.me/NAVaughn', '_blank');" class="raise paypal">PayPal</button>
-        <button onclick="this.blur();window.open('https://www.venmo.com/NathanVaughn', '_blank');" class="raise venmo">Venmo</button>
-        <button onclick="this.blur();window.open('https://pay.google.com/payments/u/0/home#sendRequestMoney', '_blank');" class="raise google">Google Pay</button>
-        <button onclick="this.blur();document.getElementById('address').innerHTML = '0xd326FBAEBbfbFb1A630804E11a5E5E04f856853c';"
-            class="raise ethereum">Ethereum</button>
-        <button onclick="this.blur();document.getElementById('address').innerHTML = '1EKgN7bAVWBu6GdLMmKnjCSzvqgkkkJo8W';"
-            class="raise bcash">Bitcoin Cash</button>
-        <div id="address"> </div>
+    <h1 class="title">Pay <a class="title-link" href="https://nathanv.me" rel="noreferrer noopener">Nathan Vaughn</a>
+    </h1>
+    <h2 class="desc">Choose your preferred payment method:</h2>
+    <div class="cards-container">
+        <div class="card-container">
+            <a class="card" href="https://paypal.me/NAVaughn" target="_blank" rel="noreferrer noopener">
+                <img class="card-image" alt="PayPal" src="img/paypal.png"></a>
+        </div>
+        <div class="card-container">
+            <a class="card" href="https://www.venmo.com/NathanVaughn" target="_blank" rel="noreferrer noopener"><img
+                    class="card-image" alt="Venmo" src="img/venmo.png"></a>
+        </div>
+        <div class="card-container">
+            <a class="card" href="https://pay.google.com/payments/u/0/home#sendRequestMoney" target="_blank"
+                rel="noreferrer noopener"><img class="card-image" alt="Google Pay" src="img/gpay.png"></a>
+        </div>
+        <div class="card-container">
+            <a class="card" href="#" onclick="show_address('eth');"><img class="card-image" alt="Ethereum"
+                    src="img/eth.png"></a>
+        </div>
+        <div class="card-container">
+            <a class="card" href="#" onclick="show_address('bch');"><img class="card-image" alt="Bitcoin Cash"
+                    src="img/bch.png"></a>
+        </div>
+        <div class="card-container">
+            <a class="card" href="#" onclick="show_address('btc');"><img class="card-image" alt="Bitcoin"
+                    src="img/btc.png"></a>
+        </div>
+    </div>
+    <div class="addresses-container">
+        <div id="eth" class="address">ETH: 0x96e7c56D5D1a7CC236AB491B552ae8d8700071c5</div>
+        <div id="bch" class="address">BCH: qzkwmg4zmms63ye4qjwje8mh4u49z04duv4kt4et8s</div>
+        <div id="btc" class="address">BTC: 1LtxAHeo9wCFt8NMexEfqL9s4p2Mhb1ez4</div>
     </div>
 </body>
 <style>
-    .raise:hover,
-    .raise:focus {
-        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-        -webkit-transform: translateY(-0.25em);
-        transform: translateY(-0.25em);
-    }
-
-    .paypal {
-        --color: #3b7bbf;
-        --hover: #689bd0;
-    }
-
-    .venmo {
-        --color: #3d95ce;
-        --hover: #dce0e6;
-    }
-
-    .google {
-        --color: #DB4437;
-        --hover: #e78279;
-    }
-
-    .ethereum {
-        --color: #575757;
-        --hover: #999999;
-    }
-
-    .bcash {
-        --color: #427e40;
-        --hover: #45a738;
-    }
-
-    button:hover,
-    button:focus {
-        border-color: var(--hover);
-        color: #fff;
-        cursor: pointer;
-    }
-
     body {
-        background: #344557 url("img/back.jpg");
-        background-size: cover;
-        color: #fff;
-        font: 300 1em 'Fira Sans', sans-serif;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
+        /* Setup off-white background */
+        background-color: rgb(242, 242, 242);
+    }
+
+    .title {
+        /* Top text stylization */
         text-align: center;
-        min-height: 100vh;
-        display: flex;
-        overflow-y: hidden;
-    }
-
-    button {
-        color: var(--color);
-        transition: 0.25s;
-        background: none;
-        border: 2px solid;
-        font: inherit;
-        line-height: 1;
-        margin: 0.5em;
-        padding: 1em 2em;
-    }
-
-    h1 {
+        font-size: 1.875em;
+        line-height: 1.3em;
         font-weight: 400;
-        font-size: 40pt;
-        margin-bottom: 1em;
+        color: rgb(54, 54, 54);
+        font-family: sans-serif;
     }
 
-    .name {
-        color: #da5252;
-        font: inherit;
-    }
-
-    .name:link {
-        text-decoration: none;
-    }
-
-    .name:hover {
-        text-decoration: underline;
-    }
-
-    #address {
-        margin-top: 2em;
+    .desc,
+    .address {
+        /* sub-text stylization */
         text-align: center;
-        font-size: 3vw;
-        height: 23.2px;
+        line-height: 1.3em;
+        margin-bottom: 0.8em;
+        font-weight: 400;
+        color: rgb(102, 102, 102);
+        font-family: sans-serif;
+    }
+
+    .cards-container {
+        /* Card flexbox container */
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-container {
+        /* Container for individual cards */
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-right: 1.5em;
+        padding-left: 1.5em;
+    }
+
+    .card {
+        /* Card design */
+        min-width: 8em;
+        min-height: 4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.3em;
+        background-color: rgb(242, 242, 242);
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        transition: 0.2s;
+    }
+
+    .card-image {
+        /* Sizing for card image */
+        max-width: 6em;
+        max-height: 3em;
+    }
+
+    .card:hover {
+        /* Move card on hover */
+        transform: translateY(-0.25em);
+        transition: 0.2s;
+    }
+
+    .card:active {
+        /* Remove shadow on click */
+        box-shadow: 0 0 0 0;
+    }
+
+    .addresses-container {
+        /* Container for crypto addresses */
+        padding-top: 1em;
+        text-align: center;
+    }
+
+    .address {
+        /* Default address to not being shown */
+        display: none;
     }
 </style>
+<script type="text/javascript">
+    function show_address(id) {
+        var a = document.getElementsByClassName('address');
+        for (i = 0; i < a.length; i++) {
+            e = a[i];
+            if (e.id == id) {
+                if (e.style.display == 'block') {
+                    e.style.display = 'none';
+                } else {
+                    e.style.display = 'block';
+                }
+            } else {
+                e.style.display = 'none';
+            }
+        }
+    }
+</script>
 
 </html>
