@@ -22,34 +22,67 @@
     <h2 class="desc">Choose your preferred payment method:</h2>
     <div class="cards-container">
         <div class="card-container">
-            <a class="card" title="PayPal" href="https://paypal.me/NAVaughn" target="_blank" rel="noreferrer noopener">
-                <img class="card-image" alt="PayPal" src="img/paypal.png"></a>
+            <a class="card" title="PayPal" href="#" onclick="show_address('paypal');">
+                <img class="card-image" alt="PayPal" src="img/logo/paypal.png">
+            </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Venmo" href="https://www.venmo.com/NathanVaughn" target="_blank" rel="noreferrer noopener"><img
-                    class="card-image" alt="Venmo" src="img/venmo.png"></a>
+            <a class="card" title="Venmo" href="#" onclick="show_address('venmo');">
+                <img class="card-image" alt="Venmo" src="img/logo/venmo.png">
+            </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Google Pay" href="https://pay.google.com/payments/u/0/home#sendRequestMoney" target="_blank"
-                rel="noreferrer noopener"><img class="card-image" alt="Google Pay" src="img/gpay.png"></a>
+            <a class="card" title="Google Pay" href="#" onclick="show_address('gpay');">
+                <img class="card-image" alt="Google Pay" src="img/logo/gpay.png">
+            </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Ethereum" href="#" onclick="show_address('eth');"><img class="card-image" alt="Ethereum"
-                    src="img/eth.png"></a>
+            <a class="card" title="Ethereum" href="#" onclick="show_address('eth');">
+                <img class="card-image" alt="Ethereum" src="img/logo/eth.png">
+            </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Bitcoin Cash" href="#" onclick="show_address('bch');"><img class="card-image" alt="Bitcoin Cash"
-                    src="img/bch.png"></a>
+            <a class="card" title="Bitcoin Cash" href="#" onclick="show_address('bch');">
+                <img class="card-image" alt="Bitcoin Cash" src="img/logo/bch.png">
+            </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Bitcoin" href="#" onclick="show_address('btc');"><img class="card-image" alt="Bitcoin"
-                    src="img/btc.png"></a>
+            <a class="card" title="Bitcoin" href="#" onclick="show_address('btc');">
+                <img class="card-image" alt="Bitcoin" src="img/logo/btc.png">
+            </a>
         </div>
     </div>
-    <div class="addresses-container">
-        <div id="eth" class="address">ETH: 0x96e7c56D5D1a7CC236AB491B552ae8d8700071c5</div>
-        <div id="bch" class="address">BCH: qzkwmg4zmms63ye4qjwje8mh4u49z04duv4kt4et8s</div>
-        <div id="btc" class="address">BTC: 1LtxAHeo9wCFt8NMexEfqL9s4p2Mhb1ez4</div>
+    <div class="extra-content-container">
+        <div id="paypal" class="extra-content">
+            <img class="qr" alt="PayPal QR Code" src="img/qr/paypal.png">
+            <div class="address">Profile: <a title="PayPal Profile" href="https://paypal.me/NAVaughn" target="_blank"
+                    rel="noreferrer noopener">https://paypal.me/NAVaughn</a></div>
+        </div>
+        <div id="venmo" class="extra-content">
+            <img class="qr" alt="Venmo QR Code" src="img/qr/venmo.png">
+            <div class="address">Profile: <a title="Venmo Profile" href="https://www.venmo.com/NathanVaughn"
+                    target="_blank" rel="noreferrer noopener">https://www.venmo.com/NathanVaughn</a></div>
+        </div>
+        <div id="gpay" class="extra-content">
+            <img class="qr" alt="Google Pay QR Code" src="img/qr/gpay.png">
+            <div class="address">Profile: <a title="Google Pay Profile" href="https://gpay.app.goo.gl/pay-ztDSfLNa5AZ"
+                    target="_blank" rel="noreferrer noopener">https://gpay.app.goo.gl/pay-ztDSfLNa5AZ</a></div>
+            <div class="address">Google Pay Website: <a title="Google Pay Website"
+                    href="https://pay.google.com/payments/u/0/home#sendRequestMoney" target="_blank"
+                    rel="noreferrer noopener">https://pay.google.com/payments/u/0/home#sendRequestMoney</a></div>
+        </div>
+        <div id="eth" class="extra-content">
+            <img class="qr" alt="Ethereum QR Code" src="img/qr/eth.png">
+            <div class="address">ETH: 0x96e7c56D5D1a7CC236AB491B552ae8d8700071c5</div>
+        </div>
+        <div id="bch" class="extra-content">
+            <img class="qr" alt="Bitcoin Cash QR Code" src="img/qr/bch.png">
+            <div class="address">BCH: qzkwmg4zmms63ye4qjwje8mh4u49z04duv4kt4et8s</div>
+        </div>
+        <div id="btc" class="extra-content">
+            <img class="qr" alt="Bitcoin QR Code" src="img/qr/btc.png">
+            <div class="address">BTC: 1LtxAHeo9wCFt8NMexEfqL9s4p2Mhb1ez4</div>
+        </div>
     </div>
 </body>
 <style>
@@ -104,7 +137,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 0.3em;
-        background-color: rgb(242, 242, 242);
+        background-color: rgb(250, 250, 250);
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
         transition: 0.2s;
     }
@@ -126,20 +159,25 @@
         box-shadow: 0 0 0 0;
     }
 
-    .addresses-container {
-        /* Container for crypto addresses */
+    .qr {
+        max-width: 15em;
+        padding-bottom: 1em;
+    }
+
+    .extra-content-container {
+        /* Container for extra content */
         padding-top: 1em;
         text-align: center;
     }
 
-    .address {
-        /* Default address to not being shown */
+    .extra-content {
+        /* Default extra content to not being shown */
         display: none;
     }
 </style>
 <script type="text/javascript">
     function show_address(id) {
-        var a = document.getElementsByClassName('address');
+        var a = document.getElementsByClassName('extra-content');
         for (var i = 0; i < a.length; i++) {
             var e = a[i];
             if (e.id == id) {
