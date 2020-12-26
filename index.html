@@ -29,13 +29,13 @@
     <h2 class="desc">Choose your preferred payment method:</h2>
     <div class="cards-container">
         <div class="card-container">
-            <a class="card" title="PayPal" href="#" onclick="show_address('paypal');">
-                <img class="card-image" alt="PayPal" src="img/logo/paypal.png">
+            <a class="card" title="Venmo" href="#" onclick="show_address('venmo');">
+                <img class="card-image" alt="Venmo" src="img/logo/venmo.png">
             </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Venmo" href="#" onclick="show_address('venmo');">
-                <img class="card-image" alt="Venmo" src="img/logo/venmo.png">
+            <a class="card" title="PayPal" href="#" onclick="show_address('paypal');">
+                <img class="card-image" alt="PayPal" src="img/logo/paypal.png">
             </a>
         </div>
         <div class="card-container">
@@ -54,21 +54,26 @@
             </a>
         </div>
         <div class="card-container">
+            <a class="card" title="Litecoin" href="#" onclick="show_address('ltc');">
+                <img class="card-image" alt="Litecoin" src="img/logo/ltc.png">
+            </a>
+        </div>
+        <div class="card-container">
             <a class="card" title="Bitcoin" href="#" onclick="show_address('btc');">
                 <img class="card-image" alt="Bitcoin" src="img/logo/btc.png">
             </a>
         </div>
     </div>
     <div class="extra-content-container">
-        <div id="paypal" class="extra-content">
-            <img class="qr" alt="PayPal QR Code" src="img/qr/paypal.png">
-            <div class="address">Profile: <a title="PayPal Profile" href="https://paypal.me/NAVaughn" target="_blank"
-                    rel="noreferrer noopener">https://paypal.me/NAVaughn</a></div>
-        </div>
         <div id="venmo" class="extra-content">
             <img class="qr" alt="Venmo QR Code" src="img/qr/venmo.png">
             <div class="address">Profile: <a title="Venmo Profile" href="https://www.venmo.com/NathanVaughn"
                     target="_blank" rel="noreferrer noopener">https://www.venmo.com/NathanVaughn</a></div>
+        </div>
+        <div id="paypal" class="extra-content">
+            <img class="qr" alt="PayPal QR Code" src="img/qr/paypal.png">
+            <div class="address">Profile: <a title="PayPal Profile" href="https://paypal.me/NAVaughn" target="_blank"
+                    rel="noreferrer noopener">https://paypal.me/NAVaughn</a></div>
         </div>
         <div id="gpay" class="extra-content">
             <img class="qr" alt="Google Pay QR Code" src="img/qr/gpay.png">
@@ -78,6 +83,7 @@
                     href="https://pay.google.com/payments/u/0/home#sendRequestMoney" target="_blank"
                     rel="noreferrer noopener">https://pay.google.com/payments/u/0/home#sendRequestMoney</a></div>
         </div>
+        <!-- https://cwaqrgen.com/ -->
         <div id="eth" class="extra-content">
             <img class="qr" alt="Ethereum QR Code" src="img/qr/eth.png">
             <div class="address">ETH: 0x96e7c56D5D1a7CC236AB491B552ae8d8700071c5</div>
@@ -86,10 +92,15 @@
             <img class="qr" alt="Bitcoin Cash QR Code" src="img/qr/bch.png">
             <div class="address">BCH: qzkwmg4zmms63ye4qjwje8mh4u49z04duv4kt4et8s</div>
         </div>
+        <div id="ltc" class="extra-content">
+            <img class="qr" alt="Litecoin QR Code" src="img/qr/ltc.png">
+            <div class="address">LTC: MTC8i3R5euHwwUYJTWni5cUb7igKXNT8Cd</div>
+        </div>
         <div id="btc" class="extra-content">
             <img class="qr" alt="Bitcoin QR Code" src="img/qr/btc.png">
             <div class="address">BTC: 1LtxAHeo9wCFt8NMexEfqL9s4p2Mhb1ez4</div>
         </div>
+
     </div>
 </body>
 <style>
