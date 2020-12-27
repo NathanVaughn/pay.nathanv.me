@@ -7,6 +7,7 @@
     <meta name="description" content="Give Nathan Vaughn money">
     <meta name="author" content="Nathan Vaughn">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://nathanv.me/assets/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://nathanv.me/assets/images/favicons/favicon-32x32.png">
@@ -19,7 +20,7 @@
     <meta property="og:title" content="Give Nathan Vaughn money" />
     <meta property="og:url" content="https://pay.nathanv.me" />
     <meta property="og:description" content="Give Nathan Vaughn money" />
-    <meta property="og:image" content="https://pay.nathanv.me/img/opg.jpg" />
+    <meta property="og:image" content="https://pay.nathanv.me/assets/images/opg.jpg" />
     <link rel="canonical" href="https://pay.nathanv.me">
 </head>
 
@@ -29,54 +30,54 @@
     <h2 class="desc">Choose your preferred payment method:</h2>
     <div class="cards-container">
         <div class="card-container">
-            <a class="card" title="Venmo" href="#" onclick="show_address('venmo');">
-                <img class="card-image" alt="Venmo" src="img/logo/venmo.png">
+            <a id="venmo-card" class="card" title="Venmo" href="#" onclick="show_more('venmo');">
+                <img class="card-image" alt="Venmo" src="assets/images/logo/venmo.png">
             </a>
         </div>
         <div class="card-container">
-            <a class="card" title="PayPal" href="#" onclick="show_address('paypal');">
-                <img class="card-image" alt="PayPal" src="img/logo/paypal.png">
+            <a id="paypal-card" class="card" title="PayPal" href="#" onclick="show_more('paypal');">
+                <img class="card-image" alt="PayPal" src="assets/images/logo/paypal.png">
             </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Google Pay" href="#" onclick="show_address('gpay');">
-                <img class="card-image" alt="Google Pay" src="img/logo/gpay.png">
+            <a id="gpay-card" class="card" title="Google Pay" href="#" onclick="show_more('gpay');">
+                <img class="card-image" alt="Google Pay" src="assets/images/logo/gpay.png">
             </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Ethereum" href="#" onclick="show_address('eth');">
-                <img class="card-image" alt="Ethereum" src="img/logo/eth.png">
+            <a id="eth-card" class="card" title="Ethereum" href="#" onclick="show_more('eth');">
+                <img class="card-image" alt="Ethereum" src="assets/images/logo/eth.png">
             </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Bitcoin Cash" href="#" onclick="show_address('bch');">
-                <img class="card-image" alt="Bitcoin Cash" src="img/logo/bch.png">
+            <a id="bch-card" class="card" title="Bitcoin Cash" href="#" onclick="show_more('bch');">
+                <img class="card-image" alt="Bitcoin Cash" src="assets/images/logo/bch.png">
             </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Litecoin" href="#" onclick="show_address('ltc');">
-                <img class="card-image" alt="Litecoin" src="img/logo/ltc.png">
+            <a id="ltc-card" class="card" title="Litecoin" href="#" onclick="show_more('ltc');">
+                <img class="card-image" alt="Litecoin" src="assets/images/logo/ltc.png">
             </a>
         </div>
         <div class="card-container">
-            <a class="card" title="Bitcoin" href="#" onclick="show_address('btc');">
-                <img class="card-image" alt="Bitcoin" src="img/logo/btc.png">
+            <a id="btc-card" class="card" title="Bitcoin" href="#" onclick="show_more('btc');">
+                <img class="card-image" alt="Bitcoin" src="assets/images/logo/btc.png">
             </a>
         </div>
     </div>
-    <div class="extra-content-container">
-        <div id="venmo" class="extra-content">
-            <img class="qr" alt="Venmo QR Code" src="img/qr/venmo.png">
+    <div class="content-container">
+        <div id="venmo-content" class="content">
+            <img class="qr" alt="Venmo QR Code" src="assets/images/qr/venmo.png">
             <div class="address">Profile: <a title="Venmo Profile" href="https://www.venmo.com/NathanVaughn"
                     target="_blank" rel="noreferrer noopener">https://www.venmo.com/NathanVaughn</a></div>
         </div>
-        <div id="paypal" class="extra-content">
-            <img class="qr" alt="PayPal QR Code" src="img/qr/paypal.png">
+        <div id="paypal-content" class="content">
+            <img class="qr" alt="PayPal QR Code" src="assets/images/qr/paypal.png">
             <div class="address">Profile: <a title="PayPal Profile" href="https://paypal.me/NAVaughn" target="_blank"
                     rel="noreferrer noopener">https://paypal.me/NAVaughn</a></div>
         </div>
-        <div id="gpay" class="extra-content">
-            <img class="qr" alt="Google Pay QR Code" src="img/qr/gpay.png">
+        <div id="gpay-content" class="content">
+            <img class="qr" alt="Google Pay QR Code" src="assets/images/qr/gpay.png">
             <div class="address">Profile: <a title="Google Pay Profile" href="https://gpay.app.goo.gl/pay-ztDSfLNa5AZ"
                     target="_blank" rel="noreferrer noopener">https://gpay.app.goo.gl/pay-ztDSfLNa5AZ</a></div>
             <div class="address">Google Pay Website: <a title="Google Pay Website"
@@ -84,132 +85,26 @@
                     rel="noreferrer noopener">https://pay.google.com/payments/u/0/home#sendRequestMoney</a></div>
         </div>
         <!-- https://cwaqrgen.com/ -->
-        <div id="eth" class="extra-content">
-            <img class="qr" alt="Ethereum QR Code" src="img/qr/eth.png">
+        <div id="eth-content" class="content">
+            <img class="qr" alt="Ethereum QR Code" src="assets/images/qr/eth.png">
             <div class="address">ETH: 0x96e7c56D5D1a7CC236AB491B552ae8d8700071c5</div>
         </div>
-        <div id="bch" class="extra-content">
-            <img class="qr" alt="Bitcoin Cash QR Code" src="img/qr/bch.png">
+        <div id="bch-content" class="content">
+            <img class="qr" alt="Bitcoin Cash QR Code" src="assets/images/qr/bch.png">
             <div class="address">BCH: qzkwmg4zmms63ye4qjwje8mh4u49z04duv4kt4et8s</div>
         </div>
-        <div id="ltc" class="extra-content">
-            <img class="qr" alt="Litecoin QR Code" src="img/qr/ltc.png">
+        <div id="ltc-content" class="content">
+            <img class="qr" alt="Litecoin QR Code" src="assets/images/qr/ltc.png">
             <div class="address">LTC: MTC8i3R5euHwwUYJTWni5cUb7igKXNT8Cd</div>
         </div>
-        <div id="btc" class="extra-content">
-            <img class="qr" alt="Bitcoin QR Code" src="img/qr/btc.png">
+        <div id="btc-content" class="content">
+            <img class="qr" alt="Bitcoin QR Code" src="assets/images/qr/btc.png">
             <div class="address">BTC: 1LtxAHeo9wCFt8NMexEfqL9s4p2Mhb1ez4</div>
         </div>
 
     </div>
+
+    <script defer src="assets/js/main.js"></script>
 </body>
-<style>
-    body {
-        /* Setup off-white background */
-        background-color: rgb(242, 242, 242);
-        word-break: break-word;
-    }
-
-    .title {
-        /* Top text stylization */
-        text-align: center;
-        font-size: 1.875em;
-        line-height: 1.3em;
-        font-weight: 400;
-        color: rgb(54, 54, 54);
-        font-family: sans-serif;
-    }
-
-    .desc,
-    .address {
-        /* sub-text stylization */
-        text-align: center;
-        line-height: 1.3em;
-        margin-bottom: 0.8em;
-        font-weight: 400;
-        color: rgb(102, 102, 102);
-        font-family: sans-serif;
-    }
-
-    .cards-container {
-        /* Card flexbox container */
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card-container {
-        /* Container for individual cards */
-        padding-top: 1em;
-        padding-bottom: 1em;
-        padding-right: 1.5em;
-        padding-left: 1.5em;
-    }
-
-    .card {
-        /* Card design */
-        min-width: 8em;
-        min-height: 4em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 0.3em;
-        background-color: rgb(250, 250, 250);
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-        transition: 0.2s;
-    }
-
-    .card-image {
-        /* Sizing for card image */
-        max-width: 6em;
-        max-height: 3em;
-    }
-
-    .card:hover {
-        /* Move card on hover */
-        transform: translateY(-0.25em);
-        transition: 0.2s;
-    }
-
-    .card:active {
-        /* Remove shadow on click */
-        box-shadow: 0 0 0 0;
-    }
-
-    .qr {
-        max-width: 15em;
-        padding-bottom: 1em;
-    }
-
-    .extra-content-container {
-        /* Container for extra content */
-        padding-top: 1em;
-        text-align: center;
-    }
-
-    .extra-content {
-        /* Default extra content to not being shown */
-        display: none;
-    }
-</style>
-<script type="text/javascript">
-    function show_address(id) {
-        var a = document.getElementsByClassName('extra-content');
-        for (var i = 0; i < a.length; i++) {
-            var e = a[i];
-            if (e.id == id) {
-                if (e.style.display == 'block') {
-                    e.style.display = 'none';
-                } else {
-                    e.style.display = 'block';
-                }
-            } else {
-                e.style.display = 'none';
-            }
-        }
-    }
-</script>
 
 </html>
