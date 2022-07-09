@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@gatsbyjs/parcel-namer-relative-to-cwd": "^1.3.0",
+    "parcel": "^2.6.2",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "build": "rimraf dist && parcel build index.html"
+  }
+}
