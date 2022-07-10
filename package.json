@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "@gatsbyjs/parcel-namer-relative-to-cwd": "^1.3.0",
-    "cpy-cli": "^4.1.0",
+    "copyfiles": "^2.4.1",
     "parcel": "^2.6.2",
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "build": "rimraf dist && cd public && parcel build index.html && cpy robots.txt ../dist/"
+    "build": "rimraf dist && parcel build index.html && copyfiles robots.txt dist/"
   }
 }
