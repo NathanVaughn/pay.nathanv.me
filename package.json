@@ -6,6 +6,6 @@
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "build": "rimraf dist && cd public && parcel build index.html && copyfiles robots.txt ../dist/"
+    "build": "rimraf dist && cd public && parcel build index.html && copyfiles robots.txt ../dist/ && cd .. && copyfiles _redirects dist/"
   }
 }
