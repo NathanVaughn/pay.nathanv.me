@@ -2,7 +2,7 @@
   "dependencies": {
     "@gatsbyjs/parcel-namer-relative-to-cwd": "^1.7.0",
     "copyfiles": "^2.4.1",
-    "parcel": "^2.6.2",
+    "parcel": "^2.7.0",
     "rimraf": "^3.0.2"
   },
   "scripts": {
