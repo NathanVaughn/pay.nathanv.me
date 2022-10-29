@@ -3,5 +3,9 @@
     "namers": [
         "@gatsbyjs/parcel-namer-relative-to-cwd",
         "@parcel/namer-default"
+    ],
+    "reporters": [
+        "...",
+        "parcel-reporter-static-files-copy"
     ]
 }
