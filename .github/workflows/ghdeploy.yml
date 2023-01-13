@@ -28,24 +28,13 @@ jobs:
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
+        id: cf-deployment
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: pay-nathanv-me
           directory: dist/
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Add GitHub Deployment
-        if: ${{ github.event_name }} == 'pull_request'
-        uses: WalshyDev/cf-pages-await@v1
-        id: cf-deployment
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          project: pay-nathanv-me
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          # Add this if you want to wait for a deployment triggered by a specfied commit
-          # commitHash: ${{ steps.push-changes.outputs.commit-hash }}
 
       - name: Comment PR with URL
         if: ${{ github.event_name }} == 'pull_request'
