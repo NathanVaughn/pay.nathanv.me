@@ -3,7 +3,7 @@
     "@gatsbyjs/parcel-namer-relative-to-cwd": "^2.2.0",
     "parcel": "^2.8.0",
     "parcel-reporter-static-files-copy": "^1.4.0",
-    "rimraf": "^4.0.6"
+    "rimraf": "^4.1.2"
   },
   "scripts": {
     "build": "rimraf dist && cd public && parcel build index.html"
