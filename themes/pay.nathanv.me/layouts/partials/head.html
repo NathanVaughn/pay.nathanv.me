@@ -1,0 +1,22 @@
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Site.Params.Prefix }} {{ .Site.Params.Author }}</title>
+    <meta name="description" content="{{ .Site.Params.Description }}">
+    <meta name="author" content="{{ .Site.Params.Author }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{ $css := resources.Get "css/style.css" | resources.Minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" />
+
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon }}">
+    <link rel="apple-touch-icon" href="{{ .Site.Params.favicon }}">
+
+    <meta property="og:title" content="{{ .Site.Params.Description }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:description" content="{{ .Site.Params.Description }}" />
+    <meta property="og:image" content="{{ .Site.Params.favicon }}" />
+
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    {{ hugo.Generator }}
+</head>

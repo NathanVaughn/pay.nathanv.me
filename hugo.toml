@@ -1,0 +1,19 @@
+baseurl      = "/"
+languageCode = "en-us"
+theme        = "pay.nathanv.me"
+
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+# better resampling algorithm
+[imaging]
+  quality = 95
+  resampleFilter = "lanczos"
+
+[params]
+    prefix = "Pay"
+    author = "Nathan Vaughn"
+    authorURL = "https://nathanv.me"
+    description = "Give Nathan Vaughn money"
+    favicon = "https://nathanv.me/img/theme-colors/blue.png"
+    subText = "Choose your preferred payment method:"

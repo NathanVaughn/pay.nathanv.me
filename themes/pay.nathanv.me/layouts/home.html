@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<body>
+    <h1 class="title">{{ .Site.Params.Prefix }}
+        <a class="title-link" href="{{ .Site.Params.AuthorURL }}" rel="noreferrer noopener">{{ .Site.Params.Author }}</a>
+    </h1>
+    <h2 class="desc">{{ .Site.Params.SubText }}</h2>
+
+    <div class="cards-container">
+    {{ range .Site.RegularPages }}
+        {{ partial "card-container.html" . }}
+    {{ end }}
+    </div>
+
+    <div class="content-container">
+        {{ range .Site.RegularPages }}
+            {{ partial "card-content.html" . }}
+        {{ end }}
+    </div>
+
+{{ partial "scripts.html" . }}
+</body>
+
+</html>

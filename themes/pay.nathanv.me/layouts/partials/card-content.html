@@ -1,0 +1,15 @@
+{{ $title_anchor := .Title | anchorize }}
+
+<div id="{{ $title_anchor }}-content" class="content">
+    {{ $qr_code := .Page.Resources.Get .Params.QRCode }}
+    {{ $qr_code := $qr_code.Fit "400x400" }}
+    <img class="qr" alt="{{ .Title }} QR Code" src="{{ $qr_code.Permalink }}">
+
+    {{ if .Params.ProfileURL }}
+    <div class="address">Profile: <a title="{{ .Title }} Profile" href="{{ .Params.ProfileURL }}"
+        target="_blank" rel="noreferrer noopener">{{ .Params.ProfileURL }}</a>
+    </div>
+    {{ else if .Params.Address }}
+    <div class="address">{{ .Params.AddressPrefix }}: {{ .Params.Address }}</div>
+    {{ end }}
+</div>

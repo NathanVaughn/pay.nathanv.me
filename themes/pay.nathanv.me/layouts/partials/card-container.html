@@ -1,0 +1,9 @@
+{{ $title_anchor := .Title | anchorize }}
+
+<div class="card-container">
+    <a id="{{ $title_anchor }}-card" class="card" title="{{ .Title }}" href="#{{ $title_anchor }}" onclick="show_more('{{ $title_anchor }}');">
+        {{ $logo := .Page.Resources.Get .Params.Logo }}
+        {{ $logo := $logo.Fit "200x100" }}
+        <img class="card-image" alt="{{ .Title }}" src="{{ $logo.Permalink }}">
+    </a>
+</div>
