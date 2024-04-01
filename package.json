@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "cross-spawn": "^7.0.3",
-    "hugo-extended": "^0.123.6"
+    "hugo-extended": "^0.124.1"
   },
   "scripts": {
     "build": "node build.js",
