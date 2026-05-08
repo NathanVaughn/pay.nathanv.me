@@ -1,7 +1,7 @@
 ---
 cascade:
-  - _target:
+  - target:
       kind: page
-    _build:
+    build:
       render: link
 ---
