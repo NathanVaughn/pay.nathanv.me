@@ -6,5 +6,8 @@
   "scripts": {
     "build": "node build.js",
     "server": "hugo server"
+  },
+  "allowScripts": {
+    "hugo-extended": true
   }
 }
