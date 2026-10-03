@@ -7,8 +7,16 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
 
 # better resampling algorithm
 [imaging]
+  resampleFilter = "Lanczos"
+
+[imaging.jpeg]
   quality = 95
-  resampleFilter = "lanczos"
+
+[imaging.webp]
+  quality = 95
+
+[imaging.avif]
+  quality = 95
 
 [params]
     prefix = "Pay"
